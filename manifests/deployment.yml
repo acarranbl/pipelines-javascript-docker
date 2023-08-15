@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: acarranblpipelinesjavascriptdocker 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: acarranblpipelinesjavascriptdocker
+  template:
+    metadata:
+      labels:
+        app: acarranblpipelinesjavascriptdocker 
+    spec:
+      containers:
+        - name: acarranblpipelinesjavascriptdocker 
+          image: acbcr.azurecr.io/acarranblpipelinesjavascriptdocker
+          ports:
+          - containerPort: 8080
