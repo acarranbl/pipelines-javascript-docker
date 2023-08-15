@@ -42,6 +42,10 @@ stages:
         containerRegistry: $(dockerRegistryServiceConnection)
         tags: |
           $(tag)
+    - task: PublishBuildArtifacts@1
+      inputs:
+        artifactName: 'manifests'
+        path: 'manifests'     
 
     - upload: manifests
       artifact: manifests
